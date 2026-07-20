@@ -1,7 +1,7 @@
 # DevOS — Definition of Done (DoD)
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Engineering / Head of Product
 > **Companion:** Engineering (`04-engineering-standards.md`), Coding (`05-coding-standards.md`), Git (`08-git-workflow.md`), Release (`09-release-strategy.md`)
 
@@ -73,4 +73,4 @@ An item (feature, service, agent, fix) is **Done** only when **all** of the foll
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ |
 | Head of Product | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Definition of Done v1.0-draft.*
+*End of Definition of Done v1.0-rc1.*

@@ -1,7 +1,7 @@
 # DevOS — Product Constitution
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** CTO (ratified by CEO + CTO + Head of Product)
 > **Supersedes:** None
 > **Companion:** PRD (`/product/PRD.md`), Engineering Specs (`/specs/`)
@@ -40,6 +40,8 @@ These tenets are **inviolable**. Any proposal contradicting a tenet must be reje
 | T8 | **Provider Abstraction** | LLM, Tool, Deploy, Channel, and Vector capabilities are expressed as interfaces; concrete implementations are plugins. |
 | T9 | **Offline-First Where Possible** | Client state syncs via CRDT; intents queue locally and flush on reconnect. |
 | T10 | **Security by Design** | Least-privilege, OIDC short-lived credentials, full audit trail on every mutation. Security is a prerequisite, not a phase. |
+| T11 | **AI Transparency** | Every autonomous decision is explainable. For each action the platform must expose: why it happened, which agent performed it, which provider was selected, cost estimate, files modified, and rollback strategy. |
+| T12 | **Open Standards** | DevOS prioritizes open standards (MCP, OpenAPI, Git, OCI, OAuth, Webhooks). Proprietary protocols require documented justification. |
 
 ---
 
@@ -81,6 +83,7 @@ To preserve focus, DevOS explicitly **renounces** the following scopes:
 | Version | Date | Change | Approved By |
 |---------|------|--------|-------------|
 | 1.0-draft | 2026-07-20 | Initial constitution | _pending_ |
+| 1.0-rc1 | 2026-07-20 | Added T11 AI Transparency, T12 Open Standards; added Article VIII Vision Stability | _pending_ |
 
 ---
 
@@ -96,4 +99,13 @@ This Constitution takes effect only upon signature below. Until then, no product
 
 ---
 
-*End of Product Constitution v1.0-draft.*
+## Article VIII — Vision Stability
+
+1. The DevOS **core product vision** — an AI-Native Development Operating System where software is built, managed, deployed, and monitored through natural-language intent across any surface by a coordinated, safe, provider-agnostic agent team — is **constant**.
+2. **Technology may change. Architecture may evolve. Implementation may change. Vision remains constant.**
+3. Any proposal to alter the core vision requires **unanimous approval** of the governance ratifiers (CEO + CTO + Head of Product + Head of Engineering) with a recorded, public justification.
+4. Vision changes are processed as amendments to this Constitution (Article VI) and version-bumped; they are never made through ADRs or specs alone.
+
+---
+
+*End of Product Constitution v1.0-rc1.*

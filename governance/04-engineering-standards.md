@@ -1,7 +1,7 @@
 # DevOS — Engineering Standards
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Engineering
 > **Companion:** Constitution (`01-product-constitution.md`), ADR (`03-adr.md`), Coding (`05-coding-standards.md`), Repo (`06-repository-standards.md`)
 
@@ -76,4 +76,25 @@ Defines the **mandatory engineering practices** every contributor follows. These
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ |
 | CTO | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Engineering Standards v1.0-draft.*
+---
+
+## 11. DevOS Kernel (Mandatory Runtime Authority)
+
+The **DevOS Kernel** is the microkernel (`core/`: message bus, agent/provider registry, dependency-injection container, CQRS, domain aggregates). It is the **only** runtime component permitted to:
+
+1. **Schedule tasks** — dispatch agent runs and drive DAG execution (ADR-002).
+2. **Manage agents** — lifecycle, registration, discovery, and assignment.
+3. **Manage workspaces** — provisioning and lifecycle (ADR-004).
+4. **Manage providers** — registration and routing configuration (ADR-003).
+5. **Manage plugins** — load/unload and lifecycle (agents, providers, channels, tools).
+6. **Manage runtime lifecycle** — start/stop, scaling coordination, health.
+
+All other services (orchestration, agent-runtime, provider-gateway, workspace-mgr, notification, query) are **tenants of the Kernel, not authorities**. They *request*; the Kernel *authorizes and executes*. Adapters and plugins never self-schedule or self-manage their lifecycle; they expose capabilities to the Kernel.
+
+**Rationale:** A single authority prevents fragmented scheduling/lifecycle logic, enforces Constitutional tenets centrally (Budget T5, HITL T3, Isolation T4, Transparency T11), and keeps adapters swappable. This is the practical realization of the Microkernel + Plugins architecture principle.
+
+**Consequence:** Any code that schedules work, mutates agent/workspace/provider/plugin state, or controls runtime lifecycle outside the Kernel is a violation of this standard and is blocked at review.
+
+---
+
+*End of Engineering Standards v1.0-rc1.*

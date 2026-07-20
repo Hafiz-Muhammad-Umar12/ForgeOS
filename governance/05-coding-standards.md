@@ -1,7 +1,7 @@
 # DevOS — Coding Standards
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Engineering
 > **Companion:** Engineering Standards (`04-engineering-standards.md`), Repo (`06-repository-standards.md`)
 
@@ -91,4 +91,4 @@
 |------|------|---------|------|
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Coding Standards v1.0-draft.*
+*End of Coding Standards v1.0-rc1.*

@@ -1,7 +1,7 @@
 # DevOS — Release Strategy
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Release Engineering / CTO
 > **Companion:** Git Workflow (`08-git-workflow.md`), Engineering (`04-engineering-standards.md`), DoD (`10-definition-of-done.md`)
 
@@ -70,4 +70,4 @@ dev → staging (pre-prod) → prod
 | Release Engineering | __________ | ☐ Yes ☐ No | ______ |
 | CTO | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Release Strategy v1.0-draft.*
+*End of Release Strategy v1.0-rc1.*

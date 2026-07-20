@@ -1,7 +1,7 @@
 # DevOS — Repository Standards
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Engineering
 > **Companion:** Git Workflow (`08-git-workflow.md`), Coding (`05-coding-standards.md`), Engineering (`04-engineering-standards.md`)
 
@@ -96,4 +96,4 @@ Rules:
 |------|------|---------|------|
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Repository Standards v1.0-draft.*
+*End of Repository Standards v1.0-rc1.*

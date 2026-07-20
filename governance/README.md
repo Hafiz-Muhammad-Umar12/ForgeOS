@@ -1,12 +1,12 @@
 # DevOS — Governance Documents
 
-> **Status:** DRAFT — For Approval
+> **Status:** RELEASE CANDIDATE — For Ratification
 > **Owner:** CTO
 > **Binding Rule:** These documents are the **supreme project governance**, ranking above PRD, specs, and ADRs. **No production code may be written until all ten are approved.**
 
 ---
 
-## The Ten Foundation Documents
+## Foundation Documents (11 + index)
 
 | # | Document | Purpose | Ranks |
 |---|----------|---------|-------|
@@ -20,6 +20,7 @@
 | 8 | [Git Workflow](08-git-workflow.md) | Trunk-based, Conventional Commits, PR/review rules | Binding on all |
 | 9 | [Release Strategy](09-release-strategy.md) | Versioning, GitOps, canary, rollback | Binding on eng |
 | 10 | [Definition of Done](10-definition-of-done.md) | The checklist an item must meet to be "Done" | Binding on all |
+| 11 | [RFC Process](11-rfc-process.md) | Request for Comments workflow for major changes/features | Governance process |
 
 ---
 
@@ -39,7 +40,7 @@ Any conflict resolves **upward** (Constitution > ADR > Standards > Specs/PRD).
 
 ## Consolidated Approval Gate
 
-Per the user's instruction, **no production code starts until these are approved.** Sign below to ratify all ten as the mandatory governance for the project.
+Per the user's instruction, **no production code starts until these are approved.** Sign below to ratify all eleven as the mandatory governance for the project.
 
 | Role | Name | Approve all 10? | Date | Notes |
 |------|------|-----------------|------|-------|
@@ -49,7 +50,7 @@ Per the user's instruction, **no production code starts until these are approved
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ | |
 
 **Conditions of approval:**
-- ☐ Approved as-is (v1.0-draft → v1.0).
+- ☐ Approved as-is (v1.0-rc1 → v1.0).
 - ☐ Approved with changes: ________________________ (tracked as revisions, re-versioned).
 - ☐ Rejected: ________________________ (revise and re-present).
 

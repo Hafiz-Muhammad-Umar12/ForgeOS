@@ -1,7 +1,7 @@
 # The DevOS Manifesto
 
-> **Status:** DRAFT — For Approval
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification
+> **Version:** 1.0-rc1
 > **Owner:** CTO
 > **Companion:** Product Constitution (`01-product-constitution.md`), PRD (`/product/PRD.md`)
 
@@ -51,4 +51,4 @@ DevOS does the labor. The human directs the vision, approves the plan, owns the 
 
 ---
 
-*End of DevOS Manifesto v1.0-draft.*
+*End of DevOS Manifesto v1.0-rc1.*

@@ -1,7 +1,7 @@
 # DevOS — Architecture Decision Records (ADR)
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** CTO (ADR custodian)
 > **Companion:** Product Constitution (`01-product-constitution.md`), Engineering Specs (`/specs/01-architecture/`)
 > **Supersedes:** The ADR summary embedded in `/specs/01-architecture/01-system-architecture.md` §7 (that summary is informational; this register is authoritative).
@@ -144,4 +144,4 @@ What we rejected and why.
 |------|------|---------|------|
 | CTO | __________ | ☐ Yes ☐ No | ______ |
 
-*End of ADR Register v1.0-draft.*
+*End of ADR Register v1.0-rc1.*

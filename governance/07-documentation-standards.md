@@ -1,7 +1,7 @@
 # DevOS — Documentation Standards
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Product / Tech Writing
 > **Companion:** Engineering Standards (`04-engineering-standards.md`), Specs (`/specs/`)
 
@@ -64,4 +64,4 @@ This matches the existing `/specs/` set; new docs conform.
 |------|------|---------|------|
 | Head of Product | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Documentation Standards v1.0-draft.*
+*End of Documentation Standards v1.0-rc1.*

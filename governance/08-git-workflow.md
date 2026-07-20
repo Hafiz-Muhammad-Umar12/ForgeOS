@@ -1,7 +1,7 @@
 # DevOS — Git Workflow
 
-> **Status:** DRAFT — For Approval (no production code until ratified)
-> **Version:** 1.0-draft
+> **Status:** RELEASE CANDIDATE — For Ratification (no production code until ratified)
+> **Version:** 1.0-rc1
 > **Owner:** Head of Engineering
 > **Companion:** Repository Standards (`06-repository-standards.md`), Coding (`05-coding-standards.md`), Release (`09-release-strategy.md`)
 
@@ -65,4 +65,4 @@ Body explains **why**; references issue/PRD/ADR (`Refs: PRD §7`, `ADR-003`).
 |------|------|---------|------|
 | Head of Engineering | __________ | ☐ Yes ☐ No | ______ |
 
-*End of Git Workflow v1.0-draft.*
+*End of Git Workflow v1.0-rc1.*
