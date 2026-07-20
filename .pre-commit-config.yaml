@@ -1,0 +1,49 @@
+# DevOS — pre-commit hooks (local dev gate; CI mirrors these checks).
+# Install:  pre-commit install && pre-commit install --hook-type commit-msg
+# See governance/08-git-workflow.md (Conventional Commits, DCO).
+minimum_pre_commit_version: "3.5.0"
+default_install_hook_types: [pre-commit, commit-msg]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: mixed-line-ending
+
+  - repo: local
+    hooks:
+      - id: gofmt
+        name: gofmt
+        entry: gofmt -l -w
+        language: system
+        types: [go]
+        pass_filenames: true
+
+      - id: goimports
+        name: goimports
+        entry: goimports -w -local github.com/Hafiz-Muhammad-Umar12/ForgeOS
+        language: system
+        types: [go]
+        pass_filenames: true
+
+      - id: golangci-lint
+        name: golangci-lint
+        entry: golangci-lint run --timeout 5m ./...
+        language: system
+        types: [go]
+        pass_filenames: false
+        require_serial: true
+
+      - id: conventional-commit
+        name: Conventional commit message
+        entry: scripts/check-conventional-commit.sh
+        language: script
+        stages: [commit-msg]
+        pass_filenames: false

@@ -1,0 +1,13 @@
+# Normalize line endings to LF on checkout to match .editorconfig.
+* text=auto eol=lf
+
+# Binary assets are never diffed or line-normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.pdf binary

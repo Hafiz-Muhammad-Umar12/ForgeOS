@@ -1,0 +1,17 @@
+# DevOS — mise-en-place toolchain configuration.
+# Install pinned tools with: mise install   (or: mise trust && mise install)
+# See governance/06-repository-standards.md and Sprint 0, Component 1.
+[tools]
+go = "1.23"
+node = "20"
+python = "3.12"
+golangci-lint = "1.62"
+pre-commit = "4.0"
+task = "3.39"
+
+[env]
+# Keep the Go workspace active for every tool invocation inside this repo.
+GOWORK = "on"
+
+[settings]
+experimental = false

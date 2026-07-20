@@ -3,7 +3,27 @@
 > **Complete Engineering Specification**
 > **Status:** All 10 phases drafted (2026-07-20)
 > **Author:** Principal Architecture team
-> **Intended use:** 2-year build by a full engineering org. Design-first; no implementation code.
+> **Intended use:** 2-year build by a full engineering org. Design-first; implementation now proceeding milestone-by-milestone (Sprint 0 started).
+
+---
+
+## Development
+
+DevOS is implemented as a monorepo. Implementation follows the approved Governance, ADRs,
+PRD, and SDD — one milestone and one service at a time.
+
+**Prerequisites:** [mise](https://mise.jdx.dev), Docker (for local infrastructure), and Git.
+
+**Quick start:**
+
+```bash
+mise install            # install pinned Go / Node / Python + tooling
+./scripts/bootstrap.sh  # create .env, fetch Go deps, install git hooks
+task --list             # list available tasks
+```
+
+Module import path (matches the git remote): `github.com/Hafiz-Muhammad-Umar12/ForgeOS`.
+See [Repository Layout](#repository-layout) and [Sprint Status](#sprint-status).
 
 ---
 
@@ -85,3 +105,46 @@ Human → Intent → Planner → Agent Team → Workspace → Infrastructure →
 ---
 
 *End of DevOS specification. This is a living document — update ADRs and phases as the build progresses.*
+
+---
+
+## Repository Layout
+
+```
+ai-native-os/
+├── apps/         # deployable binaries (gateway implemented in Sprint 0; others later)
+├── services/     # backend microservices (future milestones)
+├── plugins/      # swappable agents / providers / channels / tools (future)
+├── core/         # microkernel: bus, registry, di, cqrs, domain, scheduler
+├── packages/     # shared libs: contracts + Go foundation (log, otel, config, secrets)
+├── infra/        # IaC: docker / k8s / helm / terraform
+├── tests/        # unit | integration | e2e | load | chaos
+├── scripts/      # dev / build automation (bootstrap, commit-msg check)
+├── governance/   # constitution, ADRs, standards, RFCs
+├── specs/        # engineering specifications (phases 0–9)
+├── sdd/          # service design documents
+├── planning/     # build order, milestones, dependency graph
+├── product/      # PRD
+└── research/     # landscape research
+```
+
+Go workspace members: `core`, `packages/go`, `apps/gateway`.
+
+## Sprint Status
+
+| Milestone | Status |
+|-----------|--------|
+| **Sprint 0 — Monorepo Foundation** | ✅ Component 1 complete (repo structure, go.work, modules, tooling, lint/format, README, bootstrap) |
+| Sprint 0 — Dev Environment / Docker / Dev Containers | ⏳ pending |
+| Sprint 0 — CI/CD | ⏳ pending |
+| Sprint 0 — Logging / OTel / Config / Secrets | ⏳ pending |
+| Sprint 0 — NATS Event Bus | ⏳ pending |
+| Sprint 0 — Kernel skeleton | ⏳ pending |
+| Sprint 0 — API Gateway skeleton | ⏳ pending |
+
+See `planning/03-build-order.md` and `planning/01-product-milestones.md` for the full sequence.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE). The definitive license is pending the
+license ADR (governance/03-adr.md); Apache-2.0 is applied provisionally.

@@ -1,0 +1,30 @@
+# DevOS CODEOWNERS — top-level ownership and required reviewers.
+# See governance/06-repository-standards.md §4 (Module Ownership) and
+# governance/08-git-workflow.md §6 (protected branches).
+# core/, governance/, specs/ require designated-architect review.
+
+# Architecture & governance — CTO / architect review required
+/governance/      @Hafiz-Muhammad-Umar12
+/specs/           @Hafiz-Muhammad-Umar12
+/core/            @Hafiz-Muhammad-Umar12
+
+# Backend services & apps
+/services/        @Hafiz-Muhammad-Umar12
+/apps/            @Hafiz-Muhammad-Umar12
+/plugins/         @Hafiz-Muhammad-Umar12
+
+# Shared packages
+/packages/        @Hafiz-Muhammad-Umar12
+
+# Infrastructure & tooling
+/infra/           @Hafiz-Muhammad-Umar12
+/.github/         @Hafiz-Muhammad-Umar12
+/scripts/         @Hafiz-Muhammad-Umar12
+
+# Documentation & product
+/product/         @Hafiz-Muhammad-Umar12
+/planning/        @Hafiz-Muhammad-Umar12
+/research/        @Hafiz-Muhammad-Umar12
+
+# Fallback
+*                 @Hafiz-Muhammad-Umar12

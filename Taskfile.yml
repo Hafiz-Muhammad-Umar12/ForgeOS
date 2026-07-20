@@ -1,0 +1,66 @@
+# DevOS — cross-language task runner (go-task).
+# Usage: task <name>   |   task --list   to see all tasks.
+# Requires toolchains installed via mise (https://mise.jdx.dev): `mise install`.
+version: "3"
+
+vars:
+  GO_MODULES:
+    - core
+    - packages/go
+    - apps/gateway
+
+tasks:
+  default:
+    desc: List all available tasks
+    cmds:
+      - task --list
+
+  bootstrap:
+    desc: Provision the local dev environment (tools, .env, git hooks)
+    cmds:
+      - ./scripts/bootstrap.sh
+
+  fmt:
+    desc: Format all Go code (gofmt + goimports)
+    cmds:
+      - gofmt -w .
+      - goimports -w -local github.com/Hafiz-Muhammad-Umar12/ForgeOS .
+
+  lint:
+    desc: Run all linters (pre-commit hooks + golangci-lint)
+    cmds:
+      - pre-commit run --all-files
+      - golangci-lint run ./...
+
+  test:
+    desc: Run unit tests across all Go modules
+    cmds:
+      - go test ./...
+
+  build:
+    desc: Build all Go modules
+    cmds:
+      - go build ./...
+
+  tidy:
+    desc: Tidy Go module dependencies in each module
+    cmds:
+      - for: { var: GO_MODULES }
+        cmd: cd {{.ITEM}} && go mod tidy
+
+  verify:
+    desc: Verify the Go workspace builds and vets cleanly
+    cmds:
+      - go work sync
+      - go build ./...
+      - go vet ./...
+
+  infra-up:
+    desc: Start local infrastructure via Docker Compose (later Sprint 0 component)
+    cmds:
+      - docker compose up -d
+
+  infra-down:
+    desc: Stop local infrastructure
+    cmds:
+      - docker compose down

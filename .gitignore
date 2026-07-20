@@ -1,0 +1,57 @@
+# --- Binaries & build output ---
+/bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# --- Go ---
+/vendor/
+go.work.sum
+
+# --- Node ---
+node_modules/
+dist/
+.next/
+out/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# --- Task runner cache ---
+.task/
+
+# --- mise local state ---
+.mise/
+
+# --- Editor / OS ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Environment & secrets ---
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# --- Test / coverage ---
+coverage.out
+coverage.html
+*.cover
+
+# --- Logs ---
+*.log
+
+# --- Local overrides ---
+docker-compose.override.yml
