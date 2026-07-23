@@ -1,6 +1,7 @@
 # DevOS — golangci-lint configuration for the Go backend.
 # Run: golangci-lint run ./...
 # See governance/05-coding-standards.md §6.1 and Engineering Standards §6.
+version: "2"
 run:
   timeout: 5m
   tests: true
