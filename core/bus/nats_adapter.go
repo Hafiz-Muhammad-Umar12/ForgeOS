@@ -45,14 +45,14 @@ type NatsBus struct {
 // natsSub wraps a JetStream consumer subscription.
 type natsSub struct {
 	subject string
-	cancel  context.CancelFunc
-	cons    jetstream.Consumer
+	msgCtx  jetstream.MessagesContext
 }
 
-// Unsubscribe cancels the subscription context, which stops the consume loop.
+// Unsubscribe stops the message iterator, which causes the consume loop to
+// exit cleanly.
 func (s *natsSub) Unsubscribe() error {
-	if s.cancel != nil {
-		s.cancel()
+	if s.msgCtx != nil {
+		s.msgCtx.Stop()
 	}
 	return nil
 }
@@ -273,7 +273,6 @@ func (b *NatsBus) resolveStream(ctx context.Context, subject string) (string, er
 		return "", fmt.Errorf("bus: auto-create stream for %s: %w", subject, err)
 	}
 
-	b.streamIndex[domain+"."] = streamName
 	return streamName, nil
 }
 
@@ -320,14 +319,13 @@ func (b *NatsBus) Subscribe(ctx context.Context, subject string, handler Message
 		return nil, fmt.Errorf("subscribe %s: messages: %w", subject, err)
 	}
 
-	subCtx, cancel := context.WithCancel(ctx)
-	sub := &natsSub{subject: subject, cancel: cancel, cons: cons}
+	sub := &natsSub{subject: subject, msgCtx: msgCtx}
 
 	b.subsMu.Lock()
 	b.subs = append(b.subs, sub)
 	b.subsMu.Unlock()
 
-	go b.consumeLoop(subCtx, msgCtx, handler)
+	go b.consumeLoop(ctx, msgCtx, handler)
 
 	return sub, nil
 }
